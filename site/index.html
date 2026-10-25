@@ -185,6 +185,9 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
   .jgrid.photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .photos .jrow{display:contents}
   .photos .jrow .ph{flex:none;aspect-ratio:4/5}
+  .photos .jrow:last-child .ph:last-child{grid-column:1/-1;aspect-ratio:4/3}
+  .vids .jrow.p4{flex-wrap:wrap}
+  .vids .jrow.p4 .vt{flex:0 0 calc(50% - 4px)}
   .jgrid{gap:8px}
   .jrow{gap:8px}
   .play{width:42px;height:42px}
@@ -311,17 +314,22 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
       <div class="jrow">
         <button class="ph" style="--a:1.34;--pos:50% 40%" data-full="assets/img/work-1.jpg" aria-label="open photo"><img src="assets/img/work-1.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
         <button class="ph" style="--a:0.75;--pos:50% 40%" data-full="assets/img/event-2.jpg" aria-label="open photo"><img src="assets/img/event-2.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
-        <button class="ph" style="--a:1.0;--pos:50% 50%" data-full="assets/img/work-3.jpg" aria-label="open photo"><img src="assets/img/work-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 50%" data-full="assets/img/tent-1.jpg" aria-label="open photo"><img src="assets/img/tent-1.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
       </div>
       <div class="jrow">
-        <button class="ph" style="--a:0.55;--pos:50% 30%" data-full="assets/img/event-3.jpg" aria-label="open photo"><img src="assets/img/event-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:1.0;--pos:50% 50%" data-full="assets/img/work-3.jpg" aria-label="open photo"><img src="assets/img/work-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 45%" data-full="assets/img/event-4.jpg" aria-label="open photo"><img src="assets/img/event-4.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 50%" data-full="assets/img/tent-2.jpg" aria-label="open photo"><img src="assets/img/tent-2.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.5625;--pos:50% 40%" data-full="assets/img/event-6.jpg" aria-label="open photo"><img src="assets/img/event-6.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+      </div>
+      <div class="jrow">
         <button class="ph" style="--a:1.34;--pos:55% 50%" data-full="assets/img/work-2.jpg" aria-label="open photo"><img src="assets/img/work-2.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
         <button class="ph" style="--a:0.75;--pos:50% 40%" data-full="assets/img/event-5.jpg" aria-label="open photo"><img src="assets/img/event-5.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
-        <button class="ph" style="--a:0.56;--pos:50% 40%" data-full="assets/img/event-6.jpg" aria-label="open photo"><img src="assets/img/event-6.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 50%" data-full="assets/img/tent-3.jpg" aria-label="open photo"><img src="assets/img/tent-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
       </div>
       <div class="jrow">
         <button class="ph" style="--a:1.0;--pos:30% 50%" data-full="assets/img/work-4.jpg" aria-label="open photo"><img src="assets/img/work-4.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
-        <button class="ph" style="--a:0.75;--pos:50% 45%" data-full="assets/img/event-4.jpg" aria-label="open photo"><img src="assets/img/event-4.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.55;--pos:50% 30%" data-full="assets/img/event-3.jpg" aria-label="open photo"><img src="assets/img/event-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
         <button class="ph" style="--a:1.33;--pos:50% 50%" data-full="assets/img/event-1.jpg" aria-label="open photo"><img src="assets/img/event-1.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
       </div>
     </div>
@@ -331,7 +339,8 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
       <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-1.mp4" aria-label="play video 1"><video src="assets/video/clip-1.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:1.778" data-video="assets/video/clip-2.mp4" aria-label="play video 2"><video src="assets/video/clip-2.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
       <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-3.mp4" aria-label="play video 3"><video src="assets/video/clip-3.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:1.778" data-video="assets/video/clip-4.mp4" aria-label="play video 4"><video src="assets/video/clip-4.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
       <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-5.mp4" aria-label="play video 5"><video src="assets/video/clip-5.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:1.767" data-video="assets/video/clip-6.mp4" aria-label="play video 6"><video src="assets/video/clip-6.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
-      <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-7.mp4" aria-label="play video 7"><video src="assets/video/clip-7.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.562" data-video="assets/video/clip-8.mp4" aria-label="play video 8"><video src="assets/video/clip-8.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
+      <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-7.mp4" aria-label="play video 7"><video src="assets/video/clip-7.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.562" data-video="assets/video/clip-8.mp4" aria-label="play video 8"><video src="assets/video/clip-8.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.566" data-video="assets/video/clip-9.mp4" aria-label="play video 9"><video src="assets/video/clip-9.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
+      <div class="jrow p4"><button class="vt" style="--a:0.566" data-video="assets/video/clip-10.mp4" aria-label="play video 10"><video src="assets/video/clip-10.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.566" data-video="assets/video/clip-11.mp4" aria-label="play video 11"><video src="assets/video/clip-11.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.566" data-video="assets/video/clip-12.mp4" aria-label="play video 12"><video src="assets/video/clip-12.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.566" data-video="assets/video/clip-13.mp4" aria-label="play video 13"><video src="assets/video/clip-13.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
     </div>
   </div>
 </section>
@@ -363,6 +372,12 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
         <blockquote><span lang="he">רציתי להביע גם בכתב את הערכתי הרבה לכך שהגעת לטפל בחיילי המילואים במפגש של פלוגת ״דיסקוס״ מחטיבה 188 של השריון. אנשים שמגיעים מזמנם הפנוי להתנדב ולתרום – זהו הביחד שבזכותו ננצח. תודה רבה דויד, וישר כוח.</span><span lang="en">I wanted to put in writing how much I appreciated you coming to treat the reservists at the “Discus” company gathering of the 188th Armored Brigade. People who give their free time to volunteer and contribute — that is the togetherness that will help us win. Thank you, David, and well done.</span></blockquote>
         <div class="who"><b><span lang="he">דורון אלוני</span><span lang="en">Doron Aloni</span></b><span lang="he">מתוך פוסט בעקבות המפגש, 28.3.25</span><span lang="en">From a post after the event, 28 Mar 2025</span></div>
       </div>
+    </div>
+
+    <h3 class="sub rv"><span lang="he">תעודות הוקרה והערכה</span><span lang="en">Certificates of appreciation</span></h3>
+    <div class="certs rv">
+      <button class="ph" style="--a:.675" data-full="assets/img/appr-givati.jpg" aria-label="certificate"><img src="assets/img/appr-givati.jpg" alt="תעודת הערכה סיירת גבעתי / Certificate of appreciation, Givati Reconnaissance" loading="lazy"><span class="cap"><span lang="he">תעודת הערכה – סיירת גבעתי, מאי 2026</span><span lang="en">Certificate of appreciation – Givati Reconnaissance, May 2026</span></span></button>
+      <button class="ph" style="--a:.758" data-full="assets/img/appr-lotar.jpg" aria-label="certificate"><img src="assets/img/appr-lotar.jpg" alt="תעודת הוקרה בית הספר ללוט״ר / Certificate of appreciation, Lotar school" loading="lazy"><span class="cap"><span lang="he">תעודת הוקרה – בית הספר ללוט״ר, מרץ 2025</span><span lang="en">Certificate of appreciation – Lotar school, March 2025</span></span></button>
     </div>
   </div>
 </section>
