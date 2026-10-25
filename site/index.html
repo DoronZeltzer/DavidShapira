@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>דויד שפירא – מעסה בכיר | David Shapira – Senior Massage Therapist</title>
+<meta name="description" content="דויד שפירא – מעסה בכיר, מומחה בטיפול בכאבים. טיפול מקצועי עד הבית. | David Shapira – senior massage therapist, pain-relief specialist, home visits.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --charcoal:#2a2c2b;
+  --charcoal-2:#343635;
+  --slate:#5f625e;
+  --slate-2:#6f726e;
+  --stone:#d9d3cf;
+  --cream:#f3f0ec;
+  --ink:#232524;
+  --line:rgba(255,255,255,.14);
+  --radius:6px;
+  --gap:10px;
+  --wrap:1180px;
+  --serif:"Frank Ruhl Libre",Georgia,serif;
+  --sans:"Heebo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+html[lang="he"] [lang="en"]{display:none!important}
+html[lang="en"] [lang="he"]{display:none!important}
+.wrap{width:min(var(--wrap),100% - 40px);margin-inline:auto}
+section{padding:96px 0}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.2;margin:0}
+h2{font-size:clamp(30px,4vw,44px)}
+.eyebrow{display:block;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--slate-2);margin-bottom:14px}
+html[lang="he"] .eyebrow{letter-spacing:.06em}
+.head{max-width:640px;margin-bottom:48px}
+.head p{margin:16px 0 0;color:var(--slate)}
+.dark{background:var(--charcoal);color:var(--cream)}
+.dark .eyebrow{color:var(--stone)}
+.dark .head p{color:var(--stone)}
+.slate{background:var(--slate);color:var(--cream)}
+.slate .eyebrow{color:var(--stone)}
+.stone{background:var(--stone)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:500;font-size:16px;text-decoration:none;border:1.5px solid transparent;transition:transform .2s,background .2s,color .2s;cursor:pointer;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-primary{background:var(--cream);color:var(--charcoal)}
+.btn-primary:hover{background:#fff}
+.btn-ghost{border-color:rgba(243,240,236,.55);color:var(--cream)}
+.btn-ghost:hover{background:rgba(243,240,236,.12)}
+.btn-dark{background:var(--charcoal);color:var(--cream)}
+
+/* header */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(42,44,43,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);color:var(--cream)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.brand{font-family:var(--serif);font-size:22px;text-decoration:none;white-space:nowrap}
+.brand small{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--stone);margin-inline-start:10px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;font-size:15px;color:var(--stone);transition:color .2s}
+nav a:hover{color:#fff}
+.tools{display:flex;align-items:center;gap:12px}
+.lang{background:transparent;color:var(--cream);border:1.5px solid rgba(243,240,236,.5);border-radius:999px;padding:5px 14px;font:500 14px var(--sans);cursor:pointer;letter-spacing:.04em}
+.lang:hover{background:rgba(243,240,236,.14)}
+.call-sm{display:none;padding:7px 16px;font-size:14px}
+
+/* hero */
+.hero{padding:0;background:var(--charcoal);color:var(--cream);padding-top:68px}
+.hero-in{display:grid;grid-template-columns:1.05fr 1fr;min-height:calc(100vh - 68px);min-height:calc(100svh - 68px)}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px max(20px,calc((100vw - var(--wrap))/2)) 70px 56px;gap:0}
+html[lang="he"] .hero-copy{padding:70px 56px 70px max(20px,calc((100vw - var(--wrap))/2))}
+.hero h1{font-size:clamp(46px,6.4vw,84px);letter-spacing:-.01em}
+.hero .role{font-size:clamp(17px,2vw,21px);color:var(--stone);margin:16px 0 0;letter-spacing:.02em}
+.hero .lead{max-width:520px;margin:26px 0 34px;color:#e4dfda;font-weight:300;font-size:18px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:38px 0 0;padding:0;list-style:none}
+.tags li{font-size:14px;color:var(--stone);border:1px solid var(--line);border-radius:999px;padding:6px 16px}
+.hero-img{position:relative;overflow:hidden}
+.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero-img::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(42,44,43,.55),rgba(42,44,43,0) 40%)}
+html[lang="he"] .hero-img::after{background:linear-gradient(270deg,rgba(42,44,43,.55),rgba(42,44,43,0) 40%)}
+
+/* treatments */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap)}
+.card{background:#fff;border:1px solid rgba(35,37,36,.09);border-radius:var(--radius);padding:26px 24px 24px;transition:transform .25s,box-shadow .25s,background .25s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px -14px rgba(35,37,36,.35)}
+.card .n{font-family:var(--serif);font-size:15px;color:var(--slate-2);letter-spacing:.1em}
+.card h3{font-size:23px;margin:14px 0 4px}
+.card p{margin:0;font-size:15px;color:var(--slate);line-height:1.5}
+.note{margin:32px 0 0;color:var(--slate)}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:stretch}
+.about-text p{margin:0 0 18px;color:#e9e5e0;font-weight:300}
+.about-text h2{margin-bottom:24px}
+.facts{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.facts li{display:flex;gap:12px;align-items:flex-start;color:var(--cream)}
+.facts li::before{content:"";flex:none;width:9px;height:9px;margin-top:10px;background:var(--stone);transform:rotate(45deg)}
+.idcard{display:grid;grid-template-columns:.8fr 1.2fr;border-radius:var(--radius);overflow:hidden;min-height:100%;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.idcard .l{background:var(--stone);display:flex;align-items:center;justify-content:center;padding:22px}
+.idcard .l img{width:100%;max-width:240px;}
+.idcard .r{background:linear-gradient(160deg,#6f726d,#4d504c);color:var(--cream);padding:34px 30px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.idcard .r b{font-family:var(--serif);font-weight:500;font-size:20px;display:block;margin-bottom:6px;color:#fff}
+.idcard .r span{font-size:15px;color:#e4dfda;line-height:1.55}
+.idcard .r div{border-inline-start:2px solid var(--stone);padding-inline-start:14px}
+
+/* galleries */
+.jgrid{display:flex;flex-direction:column;gap:var(--gap)}
+.jrow{display:flex;gap:var(--gap);align-items:flex-start}
+.jrow .vt,.jrow .ph{flex:var(--a) 1 0%;aspect-ratio:var(--a);min-width:0;margin:0}
+.ph{position:relative;display:block;padding:0;border:0;background:var(--slate);border-radius:var(--radius);overflow:hidden;cursor:zoom-in}
+.ph img{width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 50%);transition:transform .5s}
+.ph:hover img{transform:scale(1.04)}
+.vt{position:relative;display:block;padding:0;border:0;margin:0;min-width:0;flex:var(--a) 1 0%;aspect-ratio:var(--a);background:var(--charcoal-2);border-radius:var(--radius);overflow:hidden;cursor:pointer}
+.vt video{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.vt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.45))}
+.play{position:absolute;z-index:2;inset:0;margin:auto;width:58px;height:58px;border-radius:50%;background:rgba(243,240,236,.92);display:grid;place-items:center;transition:transform .25s}
+.play::before{content:"";margin-inline-start:4px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent var(--charcoal)}
+.vt:hover .play{transform:scale(1.12)}
+.sub{margin:70px 0 28px;font-size:clamp(24px,3vw,32px)}
+
+/* credentials */
+.certs{display:flex;gap:var(--gap);align-items:flex-start;max-width:900px;margin-inline:auto}
+.certs .ph{flex:var(--a) 1 0%;aspect-ratio:var(--a);background:#fff;box-shadow:0 20px 40px -24px rgba(0,0,0,.45)}
+.certs .ph img{object-fit:cover}
+.cap{position:absolute;inset:auto 0 0 0;padding:34px 16px 14px;background:linear-gradient(0deg,rgba(35,37,36,.88),rgba(35,37,36,0));color:#fff;font-size:15px;text-align:start;z-index:2}
+
+/* testimonial */
+.quote{display:grid;grid-template-columns:.7fr 1.3fr;gap:0;border-radius:var(--radius);overflow:hidden;background:var(--charcoal);color:var(--cream)}
+.quote .ph{border-radius:0;aspect-ratio:auto;min-height:100%;cursor:zoom-in}
+.quote .ph img{position:absolute;inset:0}
+.quote-body{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.quote-body blockquote{margin:0;font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);line-height:1.6;font-weight:400}
+.quote-body blockquote::before{content:"“";display:block;font-size:80px;line-height:.6;color:var(--stone);margin-bottom:14px}
+.who{margin-top:26px;color:var(--stone);font-size:15px}
+.who b{display:block;color:#fff;font-weight:500;font-size:17px}
+
+/* contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(34px,5vw,58px)}
+.contact p.lead{max-width:560px;margin:20px auto 34px;color:var(--stone);font-weight:300;font-size:18px}
+.contact .cta{justify-content:center}
+.info{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 40px;margin-top:44px;padding-top:34px;border-top:1px solid var(--line);color:var(--stone)}
+.info a{text-decoration:none;display:inline-flex;gap:10px;align-items:center}
+.info a:hover{color:#fff}
+.info svg{width:19px;height:19px}
+footer{background:#202221;color:#a8a39e;text-align:center;padding:24px 0;font-size:14px}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;color:#fff}
+dialog::backdrop{background:rgba(20,21,21,.92)}
+.lb{display:grid;place-items:center;width:100%;height:100%;padding:24px}
+.lb img,.lb video{max-width:100%;max-height:calc(100vh - 48px);border-radius:4px;background:#000}
+.x{position:fixed;top:14px;inset-inline-end:14px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(243,240,236,.92);color:var(--charcoal);font-size:26px;line-height:1;cursor:pointer;z-index:5}
+
+.wa-float{position:fixed;z-index:40;inset-block-end:18px;inset-inline-end:18px;width:58px;height:58px;border-radius:50%;background:var(--cream);color:var(--charcoal);display:none;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.5)}
+.wa-float svg{width:30px;height:30px}
+
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:1000px){
+  nav{display:none}
+  .call-sm{display:inline-flex}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .about{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:820px){
+  section{padding:72px 0}
+  .hero-in{grid-template-columns:1fr;min-height:0}
+  .hero-img{order:-1;aspect-ratio:4/3}
+  .hero-img::after{background:linear-gradient(0deg,rgba(42,44,43,.75),rgba(42,44,43,0) 45%)!important}
+  .hero-copy,html[lang="he"] .hero-copy{padding:36px 20px 56px}
+  .quote{grid-template-columns:1fr}
+  .quote .ph{aspect-ratio:4/3;min-height:0}
+  .quote-body{padding:36px 24px}
+  .wa-float{display:grid}
+}
+@media (max-width:700px){
+  /* photo rows collapse to an even 2-column grid: no gaps */
+  .jgrid.photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .photos .jrow{display:contents}
+  .photos .jrow .ph{flex:none;aspect-ratio:4/5}
+  .jgrid{gap:8px}
+  .jrow{gap:8px}
+  .play{width:42px;height:42px}
+  .play::before{border-width:7px 0 7px 11px;margin-inline-start:3px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .card{padding:20px 16px}
+  .card h3{font-size:19px}
+  .card p{font-size:14px}
+  .idcard{grid-template-columns:1fr}
+  .idcard .l{padding:24px}
+  .brand small{display:none}
+  .certs{flex-direction:column;align-items:stretch}
+  .certs .ph{flex:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><span lang="he">דויד שפירא</span><span lang="en">David Shapira</span><small><span lang="he">מעסה בכיר</span><span lang="en">SENIOR MASSAGE THERAPIST</span></small></a>
+    <nav aria-label="main">
+      <ul>
+        <li><a href="#treatments"><span lang="he">טיפולים</span><span lang="en">Treatments</span></a></li>
+        <li><a href="#about"><span lang="he">אודות</span><span lang="en">About</span></a></li>
+        <li><a href="#gallery"><span lang="he">גלריה</span><span lang="en">Gallery</span></a></li>
+        <li><a href="#credentials"><span lang="he">תעודות</span><span lang="en">Credentials</span></a></li>
+        <li><a href="#reviews"><span lang="he">המלצות</span><span lang="en">Testimonials</span></a></li>
+        <li><a href="#contact"><span lang="he">צור קשר</span><span lang="en">Contact</span></a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <a class="btn btn-primary call-sm" href="tel:+972522225528"><span lang="he">התקשרו</span><span lang="en">Call</span></a>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow"><span lang="he">מעסה בכיר · טיפול בכאבים</span><span lang="en">Senior massage therapist · Pain relief</span></span>
+      <h1><span lang="he">דויד שפירא</span><span lang="en">David Shapira</span></h1>
+      <p class="role"><span lang="he">מומחה בטיפול בכאבים · טיפול מקצועי עד הבית</span><span lang="en">Pain-relief specialist · Professional treatment at your door</span></p>
+      <p class="lead"><span lang="he">כואב לך הגב? הצוואר תפוס? מגע מדויק, שחרור עמוק ורוגע שמרגישים גם יום אחרי – בהתאמה אישית, בנוחות הבית שלך.</span><span lang="en">Sore back? Tight neck? Precise touch, deep release and a calm you can still feel the next day — tailored to you, in the comfort of your own home.</span></p>
+      <div class="cta">
+        <a class="btn btn-primary wa-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.82.83-3.02-.2-.31a8.2 8.2 0 1 1 6.96 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.17 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.47-.29Z"/></svg> <span lang="he">שלחו הודעה בוואטסאפ</span><span lang="en">Message on WhatsApp</span></a>
+        <a class="btn btn-ghost" href="tel:+972522225528"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> <span dir="ltr">052-222-5528</span></a>
+      </div>
+      <ul class="tags">
+        <li><span lang="he">טיפול עד הבית</span><span lang="en">Home visits</span></li>
+        <li><span lang="he">מיטת טיפולים מקצועית</span><span lang="en">Professional treatment table</span></li>
+        <li><span lang="he">בוגר מכללת מורנו</span><span lang="en">Moreno College graduate</span></li>
+      </ul>
+    </div>
+    <div class="hero-img">
+      <img src="assets/img/work-2.jpg" alt="דויד שפירא מטפל בכתף ובצוואר / David Shapira treating a client's neck and shoulder">
+    </div>
+  </div>
+</section>
+
+<!-- TREATMENTS -->
+<section id="treatments">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span lang="he">טיפולים</span><span lang="en">Treatments</span></span>
+      <h2><span lang="he">מגוון טיפולים רפואיים וממוקדים</span><span lang="en">A range of therapeutic, targeted treatments</span></h2>
+      <p><span lang="he">כל טיפול מותאם אישית למצב ולצורך שלך – משחרור שרירים עמוק ועד רוגע והרפיה.</span><span lang="en">Every session is tailored to your body and your needs — from deep muscle release to calm and relaxation.</span></p>
+    </div>
+    <div class="cards rv">
+      <article class="card"><span class="n">01</span><h3><span lang="he">שוודי</span><span lang="en">Swedish</span></h3><p><span lang="he">עיסוי קלאסי להרפיה ולשחרור מתחים</span><span lang="en">Classic massage for relaxation and tension relief</span></p></article>
+      <article class="card"><span class="n">02</span><h3><span lang="he">לומי לומי</span><span lang="en">Lomi Lomi</span></h3><p><span lang="he">תנועות זורמות וארוכות בהשראת הוואי</span><span lang="en">Long, flowing strokes inspired by Hawaii</span></p></article>
+      <article class="card"><span class="n">03</span><h3><span lang="he">רקמות עמוק</span><span lang="en">Deep tissue</span></h3><p><span lang="he">עבודה עמוקה על שרירים תפוסים וכאבים כרוניים</span><span lang="en">Deep work on tight muscles and chronic pain</span></p></article>
+      <article class="card"><span class="n">04</span><h3><span lang="he">סיני</span><span lang="en">Chinese</span></h3><p><span lang="he">עיסוי סיני מסורתי לאיזון הגוף</span><span lang="en">Traditional Chinese massage to rebalance the body</span></p></article>
+      <article class="card"><span class="n">05</span><h3><span lang="he">טריגר פוינט</span><span lang="en">Trigger point</span></h3><p><span lang="he">טיפול ממוקד בנקודות כאב ובשרירים תפוסים</span><span lang="en">Focused release of painful knots and trigger points</span></p></article>
+      <article class="card"><span class="n">06</span><h3><span lang="he">כוסות רוח והקזת דם</span><span lang="en">Cupping &amp; wet cupping</span></h3><p><span lang="he">טיפול בכוסות רוח לשיפור זרימת הדם ושחרור שרירים</span><span lang="en">Cupping to boost circulation and release muscles</span></p></article>
+      <article class="card"><span class="n">07</span><h3><span lang="he">רפלקסולוגיה</span><span lang="en">Reflexology</span></h3><p><span lang="he">טיפול בנקודות רפלקס בכפות הרגליים</span><span lang="en">Treatment of reflex points in the feet</span></p></article>
+      <article class="card"><span class="n">08</span><h3><span lang="he">עיסוי לימפטי</span><span lang="en">Lymphatic</span></h3><p><span lang="he">עיסוי עדין לניקוז נוזלים והפחתת נפיחות</span><span lang="en">Gentle massage to drain fluids and reduce swelling</span></p></article>
+      <article class="card"><span class="n">09</span><h3><span lang="he">אורטופדי (תאילנדי)</span><span lang="en">Orthopedic (Thai)</span></h3><p><span lang="he">מתיחות ולחיצות לשיפור טווח התנועה</span><span lang="en">Stretches and pressure to improve range of motion</span></p></article>
+      <article class="card"><span class="n">10</span><h3><span lang="he">שיאצו בכסא</span><span lang="en">Chair shiatsu</span></h3><p><span lang="he">טיפול שיאצו מהיר ויעיל בישיבה</span><span lang="en">Quick, effective shiatsu while seated</span></p></article>
+      <article class="card"><span class="n">11</span><h3><span lang="he">קינזיו טייפ</span><span lang="en">Kinesio tape</span></h3><p><span lang="he">הדבקת קינזיו טייפ לתמיכה והקלה בכאב</span><span lang="en">Kinesio taping for support and pain relief</span></p></article>
+      <article class="card"><span class="n">12</span><h3><span lang="he">עיסוי פנים ורגליים</span><span lang="en">Face &amp; foot</span></h3><p><span lang="he">פינוק מרגיע לפנים ולכפות הרגליים</span><span lang="en">A soothing treat for the face and feet</span></p></article>
+    </div>
+    <p class="note rv"><span lang="he">טיפול מקצועי בהתאמה אישית – שלחו הודעה עכשיו ותשריינו מקום.</span><span lang="en">Personalised professional treatment — send a message now and reserve your spot.</span></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="slate">
+  <div class="wrap about">
+    <div class="about-text rv">
+      <span class="eyebrow"><span lang="he">אודות</span><span lang="en">About</span></span>
+      <h2><span lang="he">קצת עליי</span><span lang="en">A little about me</span></h2>
+      <p><span lang="he">שמי דויד שפירא, מעסה בכיר ומומחה בטיפול בכאבים. אני מגיע אליך הביתה עם מיטת טיפולים מקצועית ומתאים לכל מטופל טיפול אישי – כי אין שני גופים זהים.</span><span lang="en">I'm David Shapira, a senior massage therapist specialising in pain relief. I come to your home with a professional treatment table and tailor every session to the person on it — because no two bodies are alike.</span></p>
+      <p><span lang="he">למדתי במכללת Moreno World Massage College ובאיגוד מקצועות העיסוי בישראל, ואני ממשיך להתעדכן ולהשתתף באירועי עיסוי בינלאומיים. אני גם מתנדב לטפל בלוחמי צה״ל.</span><span lang="en">I trained at Moreno World Massage College, I keep learning at international massage events, and I volunteer my time treating IDF soldiers.</span></p>
+      <ul class="facts">
+        <li><span lang="he">בוגר קורס עיסוי מקצועי בכיר</span><span lang="en">Graduate of the Senior Professional Massage course</span></li>
+        <li><span lang="he">ספורטתרפיה – מעסה רפואי בכיר</span><span lang="en">Sports therapy – senior medical massage therapist</span></li>
+        <li><span lang="he">טיפול בבית הלקוח, בהתאמה אישית</span><span lang="en">Home visits, personalised to you</span></li>
+      </ul>
+    </div>
+    <div class="idcard rv">
+      <div class="l"><img src="assets/img/logo.png" alt="David Shapira logo"></div>
+      <div class="r">
+        <div><b><span lang="he">מיטת טיפולים מקצועית</span><span lang="en">Professional treatment table</span></b><span><span lang="he">נוחות ובטיחות מלאה, גם בבית שלך.</span><span lang="en">Full comfort and safety, even in your own home.</span></span></div>
+        <div><b><span lang="he">מגוון טיפולים רפואיים</span><span lang="en">Therapeutic variety</span></b><span><span lang="he">12 סוגי טיפול – משוודי ועד טריגר פוינט.</span><span lang="en">12 treatment types — from Swedish to trigger point.</span></span></div>
+        <div><b><span lang="he">מומחה בכאבים</span><span lang="en">Pain specialist</span></b><span><span lang="he">כאבי גב, צוואר, כתפיים ועוד.</span><span lang="en">Back, neck, shoulder pain and more.</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span lang="he">גלריה</span><span lang="en">Gallery</span></span>
+      <h2><span lang="he">מהעבודה, מהקורסים ומהאירועים</span><span lang="en">From the treatment table, courses and events</span></h2>
+    </div>
+    <div class="jgrid photos rv">
+      <div class="jrow">
+        <button class="ph" style="--a:1.34;--pos:50% 40%" data-full="assets/img/work-1.jpg" aria-label="open photo"><img src="assets/img/work-1.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 40%" data-full="assets/img/event-2.jpg" aria-label="open photo"><img src="assets/img/event-2.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:1.0;--pos:50% 50%" data-full="assets/img/work-3.jpg" aria-label="open photo"><img src="assets/img/work-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+      </div>
+      <div class="jrow">
+        <button class="ph" style="--a:0.55;--pos:50% 30%" data-full="assets/img/event-3.jpg" aria-label="open photo"><img src="assets/img/event-3.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:1.34;--pos:55% 50%" data-full="assets/img/work-2.jpg" aria-label="open photo"><img src="assets/img/work-2.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 40%" data-full="assets/img/event-5.jpg" aria-label="open photo"><img src="assets/img/event-5.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.56;--pos:50% 40%" data-full="assets/img/event-6.jpg" aria-label="open photo"><img src="assets/img/event-6.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+      </div>
+      <div class="jrow">
+        <button class="ph" style="--a:1.0;--pos:30% 50%" data-full="assets/img/work-4.jpg" aria-label="open photo"><img src="assets/img/work-4.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:0.75;--pos:50% 45%" data-full="assets/img/event-4.jpg" aria-label="open photo"><img src="assets/img/event-4.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+        <button class="ph" style="--a:1.33;--pos:50% 50%" data-full="assets/img/event-1.jpg" aria-label="open photo"><img src="assets/img/event-1.jpg" alt="David Shapira – גלריה / gallery" loading="lazy"></button>
+      </div>
+    </div>
+
+    <h3 class="sub rv"><span lang="he">סרטונים</span><span lang="en">Videos</span></h3>
+    <div class="jgrid vids rv">
+      <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-1.mp4" aria-label="play video 1"><video src="assets/video/clip-1.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:1.778" data-video="assets/video/clip-2.mp4" aria-label="play video 2"><video src="assets/video/clip-2.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
+      <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-3.mp4" aria-label="play video 3"><video src="assets/video/clip-3.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:1.778" data-video="assets/video/clip-4.mp4" aria-label="play video 4"><video src="assets/video/clip-4.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
+      <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-5.mp4" aria-label="play video 5"><video src="assets/video/clip-5.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:1.767" data-video="assets/video/clip-6.mp4" aria-label="play video 6"><video src="assets/video/clip-6.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
+      <div class="jrow"><button class="vt" style="--a:1.778" data-video="assets/video/clip-7.mp4" aria-label="play video 7"><video src="assets/video/clip-7.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button><button class="vt" style="--a:0.562" data-video="assets/video/clip-8.mp4" aria-label="play video 8"><video src="assets/video/clip-8.mp4#t=0.4" muted playsinline preload="metadata"></video><span class="play"></span></button></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials" class="stone">
+  <div class="wrap">
+    <div class="head rv" style="margin-inline:auto;text-align:center">
+      <span class="eyebrow"><span lang="he">תעודות</span><span lang="en">Credentials</span></span>
+      <h2><span lang="he">הכשרה מקצועית ותעודות</span><span lang="en">Professional training &amp; certificates</span></h2>
+    </div>
+    <div class="certs rv">
+      <button class="ph" style="--a:.712" data-full="assets/img/cert-1.jpg" aria-label="certificate"><img src="assets/img/cert-1.jpg" alt="תעודת ספורטתרפיה – מעסה רפואי בכיר / Sports therapy certificate – senior medical massage therapist" loading="lazy"><span class="cap"><span lang="he">ספורטתרפיה – מעסה רפואי בכיר</span><span lang="en">Sports therapy – senior medical massage therapist</span></span></button>
+      <button class="ph" style="--a:.72" data-full="assets/img/cert-2.jpg" aria-label="certificate"><img src="assets/img/cert-2.jpg" alt="תעודת קורס עיסוי מקצועי בכיר / Senior professional massage course certificate" loading="lazy"><span class="cap"><span lang="he">קורס עיסוי מקצועי בכיר</span><span lang="en">Senior professional massage course</span></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow"><span lang="he">המלצות</span><span lang="en">Testimonials</span></span>
+      <h2><span lang="he">מילים טובות</span><span lang="en">Kind words</span></h2>
+    </div>
+    <div class="quote rv">
+      <button class="ph" data-full="assets/img/thanks.jpg" aria-label="certificate of appreciation"><img src="assets/img/thanks.jpg" alt="תעודת הוקרה מלוחמי פלס״ר סיירת גבעתי / Certificate of appreciation from Givati Reconnaissance Company fighters" loading="lazy" style="object-position:50% 40%"><span class="cap"><span lang="he">תעודת הוקרה – פלס״ר סיירת גבעתי</span><span lang="en">Certificate of appreciation – Givati Reconnaissance Co.</span></span></button>
+      <div class="quote-body">
+        <blockquote><span lang="he">רציתי להביע גם בכתב את הערכתי הרבה לכך שהגעת לטפל בחיילי המילואים במפגש של פלוגת ״דיסקוס״ מחטיבה 188 של השריון. אנשים שמגיעים מזמנם הפנוי להתנדב ולתרום – זהו הביחד שבזכותו ננצח. תודה רבה דויד, וישר כוח.</span><span lang="en">I wanted to put in writing how much I appreciated you coming to treat the reservists at the “Discus” company gathering of the 188th Armored Brigade. People who give their free time to volunteer and contribute — that is the togetherness that will help us win. Thank you, David, and well done.</span></blockquote>
+        <div class="who"><b><span lang="he">דורון אלוני</span><span lang="en">Doron Aloni</span></b><span lang="he">מתוך פוסט בעקבות המפגש, 28.3.25</span><span lang="en">From a post after the event, 28 Mar 2025</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="dark contact">
+  <div class="wrap">
+    <span class="eyebrow"><span lang="he">צור קשר</span><span lang="en">Contact</span></span>
+    <h2><span lang="he">מוכנים להיפרד מהכאב?</span><span lang="en">Ready to say goodbye to the pain?</span></h2>
+    <p class="lead"><span lang="he">אל תחכו שהגוף יצרח – תקדימו אותו. שלחו הודעה עכשיו ונתאים לכם טיפול.</span><span lang="en">Don't wait for your body to scream — get ahead of it. Send a message now and we'll find the right treatment for you.</span></p>
+    <div class="cta">
+      <a class="btn btn-primary wa-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.82.83-3.02-.2-.31a8.2 8.2 0 1 1 6.96 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.17 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.47-.29Z"/></svg> <span lang="he">וואטסאפ</span><span lang="en">WhatsApp</span></a>
+      <a class="btn btn-ghost" href="tel:+972522225528"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> <span lang="he">התקשרו</span><span lang="en">Call</span> · <span dir="ltr">052-222-5528</span></a>
+    </div>
+    <div class="info">
+      <a href="mailto:dshapira295@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> <span dir="ltr">dshapira295@gmail.com</span></a>
+      <a href="tel:+972522225528"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> <span dir="ltr">052-222-5528</span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 <span lang="he">דויד שפירא – מעסה בכיר</span><span lang="en">David Shapira – Senior Massage Therapist</span></div></footer>
+
+<a class="wa-float wa-link" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.82.83-3.02-.2-.31a8.2 8.2 0 1 1 6.96 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.17 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.47-.29Z"/></svg></a>
+
+<dialog id="lb"><button class="x" type="button" aria-label="Close">×</button><div class="lb" id="lbBody"></div></dialog>
+
+<script>
+(function(){
+  var root=document.documentElement, btn=document.getElementById('langBtn');
+  var msg={he:'שלום דויד, אשמח לקבוע טיפול.',en:'Hi David, I\'d like to book a treatment.'};
+  function setLang(l){
+    root.lang=l; root.dir=(l==='he')?'rtl':'ltr';
+    btn.textContent=(l==='he')?'EN':'עב';
+    btn.setAttribute('aria-label',l==='he'?'Switch to English':'החלפה לעברית');
+    var u='https://wa.me/972522225528?text='+encodeURIComponent(msg[l]);
+    document.querySelectorAll('.wa-link').forEach(function(a){a.href=u});
+    document.title=(l==='he')?'דויד שפירא – מעסה בכיר':'David Shapira – Senior Massage Therapist';
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
+  setLang(saved==='en'?'en':'he');
+  btn.addEventListener('click',function(){setLang(root.lang==='he'?'en':'he')});
+
+  /* lightbox */
+  var dlg=document.getElementById('lb'), body=document.getElementById('lbBody');
+  function openLb(html){body.innerHTML=html; if(dlg.showModal)dlg.showModal(); else dlg.setAttribute('open','')}
+  function closeLb(){var v=body.querySelector('video'); if(v)v.pause(); body.innerHTML=''; if(dlg.close)dlg.close(); else dlg.removeAttribute('open')}
+  dlg.addEventListener('close',function(){body.innerHTML=''});
+  dlg.addEventListener('click',function(e){if(e.target===dlg||e.target===body)closeLb()});
+  dlg.querySelector('.x').addEventListener('click',closeLb);
+  document.querySelectorAll('[data-full]').forEach(function(b){
+    b.addEventListener('click',function(){openLb('<img src="'+b.dataset.full+'" alt="">')});
+  });
+  document.querySelectorAll('[data-video]').forEach(function(b){
+    b.addEventListener('click',function(){openLb('<video src="'+b.dataset.video+'" controls autoplay playsinline></video>')});
+  });
+
+  /* reveal */
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.08});
+    els.forEach(function(el){io.observe(el)});
+  } else els.forEach(function(el){el.classList.add('in')});
+})();
+</script>
+</body>
+</html>
