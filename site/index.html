@@ -61,6 +61,7 @@ html[lang="he"] .eyebrow{letter-spacing:.06em}
 header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(38,51,47,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);color:var(--cream)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--nav)}
 .brand{display:flex;align-items:center;height:100%;padding-block:8px;text-decoration:none}
+.brand{flex:none}
 .brand img{height:100%;width:auto;display:block}
 nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
 nav a{text-decoration:none;font-size:15px;color:var(--stone);transition:color .2s}
@@ -68,6 +69,12 @@ nav a:hover{color:#f8f5ee}
 .tools{display:flex;align-items:center;gap:12px}
 .lang{background:transparent;color:var(--cream);border:1.5px solid rgba(239,235,226,.5);border-radius:999px;padding:5px 14px;font:500 14px var(--sans);cursor:pointer;letter-spacing:.04em}
 .lang:hover{background:rgba(239,235,226,.14)}
+.snd{width:38px;height:38px;display:grid;place-items:center;padding:0;background:transparent;color:var(--cream);border:1.5px solid rgba(239,235,226,.5);border-radius:50%;cursor:pointer}
+.snd:hover{background:rgba(239,235,226,.14)}
+.snd svg{width:19px;height:19px}
+.snd .off{display:none}
+.snd[aria-pressed="false"] .on{display:none}
+.snd[aria-pressed="false"] .off{display:block}
 .call-sm{display:none;padding:7px 16px;font-size:14px}
 
 /* hero */
@@ -200,9 +207,11 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
   .idcard{grid-template-columns:1fr}
   .idcard .l{padding:24px}
   :root{--nav:72px}
+  .tools{gap:8px}
   .certs{flex-direction:column;align-items:stretch}
   .certs .ph{flex:none}
 }
+@media (max-width:370px){.call-sm{display:none!important}}
 </style>
 </head>
 <body>
@@ -222,6 +231,7 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
     </nav>
     <div class="tools">
       <a class="btn btn-primary call-sm" href="tel:+972522225528"><span lang="he">התקשרו</span><span lang="en">Call</span></a>
+      <button class="snd" id="sndBtn" type="button" aria-pressed="false" aria-label="Music" title="Music"><svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg><svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Z"/><path d="m16 9 5 6"/><path d="m21 9-5 6"/></svg></button>
       <button class="lang" id="langBtn" type="button" aria-label="Switch language">EN</button>
     </div>
   </div>
@@ -421,23 +431,49 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
     document.querySelectorAll('.wa-link').forEach(function(a){a.href=u});
     document.title=(l==='he')?'דויד שפירא – מעסה בכיר':'David Shapira – Senior Massage Therapist';
     try{localStorage.setItem('lang',l)}catch(e){}
+    if(typeof ui==='function'&&typeof snd!=='undefined')ui();
   }
   var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
   setLang(saved==='en'?'en':'he');
   btn.addEventListener('click',function(){setLang(root.lang==='he'?'en':'he')});
 
+
+  /* soft background music */
+  var audio=new Audio('assets/audio/ambient.mp3'); audio.loop=true; audio.volume=0; audio.preload='auto';
+  var snd=document.getElementById('sndBtn'), TARGET=0.16, playing=false, paused=false, fade=null;
+  var want=true; try{want=localStorage.getItem('music')!=='off'}catch(e){}
+  var tip={he:{on:'השתקת מוזיקה',off:'הפעלת מוזיקה'},en:{on:'Mute music',off:'Play music'}};
+  function ui(){var l=root.lang; snd.setAttribute('aria-pressed',playing?'true':'false'); var s=playing?tip[l].on:tip[l].off; snd.setAttribute('aria-label',s); snd.title=s}
+  function fadeTo(v,ms,done){clearInterval(fade); var from=audio.volume,t0=Date.now(); fade=setInterval(function(){var k=Math.min(1,(Date.now()-t0)/ms); audio.volume=Math.max(0,Math.min(1,from+(v-from)*k)); if(k>=1){clearInterval(fade); if(done)done()}},50)}
+  function start(){ if(!want||playing)return; var p=audio.play(); if(p&&p.then){p.then(function(){playing=true; ui(); fadeTo(TARGET,3000); drop()}).catch(function(){})} }
+  function stop(){playing=false; ui(); fadeTo(0,600,function(){audio.pause()})}
+  function unlock(e){ if(e.target&&e.target.closest&&e.target.closest('#sndBtn'))return; start() }
+  function drop(){['pointerdown','touchend','keydown'].forEach(function(n){removeEventListener(n,unlock)})}
+  ['pointerdown','touchend','keydown'].forEach(function(n){addEventListener(n,unlock,{passive:true})});
+  snd.addEventListener('click',function(){
+    if(playing){want=false; try{localStorage.setItem('music','off')}catch(e){} stop()}
+    else{want=true; try{localStorage.setItem('music','on')}catch(e){} start()}
+  });
+  document.addEventListener('visibilitychange',function(){
+    if(!playing&&!paused)return;
+    if(document.hidden){audio.pause()} else if(playing&&!paused){audio.play().catch(function(){})}
+  });
+  function musicPause(){if(playing&&!paused){paused=true; fadeTo(0,300,function(){audio.pause()})}}
+  function musicResume(){if(paused){paused=false; if(playing){audio.play().then(function(){fadeTo(TARGET,1500)}).catch(function(){})}}}
+  ui(); start();
+
   /* lightbox */
   var dlg=document.getElementById('lb'), body=document.getElementById('lbBody');
   function openLb(html){body.innerHTML=html; if(dlg.showModal)dlg.showModal(); else dlg.setAttribute('open','')}
-  function closeLb(){var v=body.querySelector('video'); if(v)v.pause(); body.innerHTML=''; if(dlg.close)dlg.close(); else dlg.removeAttribute('open')}
-  dlg.addEventListener('close',function(){body.innerHTML=''});
+  function closeLb(){var v=body.querySelector('video'); if(v)v.pause(); body.innerHTML=''; musicResume(); if(dlg.close)dlg.close(); else dlg.removeAttribute('open')}
+  dlg.addEventListener('close',function(){body.innerHTML=''; musicResume()});
   dlg.addEventListener('click',function(e){if(e.target===dlg||e.target===body)closeLb()});
   dlg.querySelector('.x').addEventListener('click',closeLb);
   document.querySelectorAll('[data-full]').forEach(function(b){
     b.addEventListener('click',function(){openLb('<img src="'+b.dataset.full+'" alt="">')});
   });
   document.querySelectorAll('[data-video]').forEach(function(b){
-    b.addEventListener('click',function(){openLb('<video src="'+b.dataset.video+'" controls autoplay playsinline></video>')});
+    b.addEventListener('click',function(){musicPause(); openLb('<video src="'+b.dataset.video+'" controls autoplay playsinline></video>')});
   });
 
   /* reveal */
