@@ -21,11 +21,12 @@
   --radius:6px;
   --gap:10px;
   --wrap:1180px;
+  --nav:84px;
   --serif:"Frank Ruhl Libre",Georgia,serif;
   --sans:"Heebo",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav) + 8px)}
 body{margin:0;font-family:var(--sans);font-size:17px;line-height:1.7;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
 img,video{display:block;max-width:100%}
 a{color:inherit}
@@ -58,9 +59,9 @@ html[lang="he"] .eyebrow{letter-spacing:.06em}
 
 /* header */
 header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(38,51,47,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);color:var(--cream)}
-.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
-.brand{font-family:var(--serif);font-size:22px;text-decoration:none;white-space:nowrap}
-.brand small{font-family:var(--sans);font-size:12px;letter-spacing:.14em;color:var(--stone);margin-inline-start:10px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:var(--nav)}
+.brand{display:flex;align-items:center;height:100%;padding-block:8px;text-decoration:none}
+.brand img{height:100%;width:auto;display:block}
 nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
 nav a{text-decoration:none;font-size:15px;color:var(--stone);transition:color .2s}
 nav a:hover{color:#f8f5ee}
@@ -70,8 +71,8 @@ nav a:hover{color:#f8f5ee}
 .call-sm{display:none;padding:7px 16px;font-size:14px}
 
 /* hero */
-.hero{padding:0;background:var(--charcoal);color:var(--cream);padding-top:68px}
-.hero-in{display:grid;grid-template-columns:1.05fr 1fr;min-height:calc(100vh - 68px);min-height:calc(100svh - 68px)}
+.hero{padding:0;background:var(--charcoal);color:var(--cream);padding-top:var(--nav)}
+.hero-in{display:grid;grid-template-columns:1.05fr 1fr;min-height:calc(100vh - var(--nav));min-height:calc(100svh - var(--nav))}
 .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:70px max(20px,calc((100vw - var(--wrap))/2)) 70px 56px;gap:0}
 html[lang="he"] .hero-copy{padding:70px 56px 70px max(20px,calc((100vw - var(--wrap))/2))}
 .hero h1{font-size:clamp(46px,6.4vw,84px);letter-spacing:-.01em}
@@ -198,7 +199,7 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
   .card p{font-size:14px}
   .idcard{grid-template-columns:1fr}
   .idcard .l{padding:24px}
-  .brand small{display:none}
+  :root{--nav:72px}
   .certs{flex-direction:column;align-items:stretch}
   .certs .ph{flex:none}
 }
@@ -208,7 +209,7 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
 
 <header>
   <div class="wrap bar">
-    <a class="brand" href="#top"><span lang="he">דויד שפירא</span><span lang="en">David Shapira</span><small><span lang="he">מעסה בכיר</span><span lang="en">SENIOR MASSAGE THERAPIST</span></small></a>
+    <a class="brand" href="#top" aria-label="David Shapira"><img lang="he" src="assets/img/logo-he-light.png" alt="דויד שפירא – מעסה בכיר"><img lang="en" src="assets/img/logo-en-light.png" alt="David Shapira – Senior Massage Therapist"></a>
     <nav aria-label="main">
       <ul>
         <li><a href="#treatments"><span lang="he">טיפולים</span><span lang="en">Treatments</span></a></li>
