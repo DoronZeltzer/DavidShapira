@@ -215,6 +215,10 @@ dialog::backdrop{background:rgba(16,24,22,.92)}
 .credit{margin:6px 0 0;font-size:13px;opacity:.75;letter-spacing:.03em}
 .credit b{font-weight:500;letter-spacing:.06em}
 footer p{margin:0}
+.price{display:inline-flex;flex-direction:column;align-items:center;gap:4px;margin:0 0 40px;padding:22px 44px 20px;background:var(--stone);border-radius:var(--radius);color:var(--ink);text-align:center}
+.price svg{width:30px;height:30px;color:var(--slate);margin-bottom:6px}
+.price .lbl{font-size:15px;color:var(--slate);letter-spacing:.02em}
+.price strong{font-family:var(--serif);font-weight:500;font-size:40px;line-height:1.1;letter-spacing:.01em}
 </style>
 </head>
 <body>
@@ -273,6 +277,11 @@ footer p{margin:0}
       <span class="eyebrow"><span lang="he">טיפולים</span><span lang="en">Treatments</span></span>
       <h2><span lang="he">מגוון טיפולים רפואיים וממוקדים</span><span lang="en">A range of therapeutic, targeted treatments</span></h2>
       <p><span lang="he">כל טיפול מותאם אישית למצב ולצורך שלך – משחרור שרירים עמוק ועד רוגע והרפיה.</span><span lang="en">Every session is tailored to your body and your needs — from deep muscle release to calm and relaxation.</span></p>
+    </div>
+    <div class="price rv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2"/><circle cx="12" cy="12" r="2.6"/><path d="M6 9.5v.01M18 14.5v.01"/></svg>
+      <span class="lbl"><span lang="he">טווח מחירים (₪)</span><span lang="en">Price range (₪)</span></span>
+      <strong dir="ltr">400–450</strong>
     </div>
     <div class="cards rv">
       <article class="card"><span class="n">01</span><h3><span lang="he">שוודי</span><span lang="en">Swedish</span></h3><p><span lang="he">עיסוי קלאסי להרפיה ולשחרור מתחים</span><span lang="en">Classic massage for relaxation and tension relief</span></p></article>
