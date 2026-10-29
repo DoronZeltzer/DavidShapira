@@ -4,8 +4,22 @@
     {
       "name": "site",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "5173", "--directory", "site"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5173",
+        "--directory",
+        "site"
+      ],
       "port": 5173
+    },
+    {
+      "name": "site-dev",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        ".claude/dev-server.js"
+      ],
+      "port": 5174
     }
   ]
 }

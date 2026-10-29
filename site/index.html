@@ -229,6 +229,47 @@ footer p{margin:0}
 .prices .price svg{width:30px;height:30px}
 .prices .price .lbl{font-size:14px}
 .prices .price strong{font-size:30px}
+
+.stars{display:inline-flex;gap:2px;vertical-align:middle}
+.stars svg{width:17px;height:17px;fill:#c8a14b;stroke:#c8a14b;stroke-width:1}
+.stars svg.off{fill:none;stroke:rgba(30,42,39,.3)}
+.stars.big svg{width:24px;height:24px}
+.heroRating{display:inline-flex;align-items:center;gap:10px;margin:0 0 20px;color:var(--stone);text-decoration:none;font-size:15px}
+.heroRating[hidden]{display:none}
+.heroRating:hover{color:#fff}
+.heroRating .stars svg.off{stroke:rgba(239,235,226,.4)}
+.rvbox[hidden],.btn[hidden]{display:none}
+.rvempty{margin:-4px 0 26px;color:var(--slate);font-size:17px}
+.rvsum{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:-4px 0 28px}
+.rvavg{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1}
+.rvcount{color:var(--slate);font-size:15px}
+.rvlist{columns:2;column-gap:var(--gap)}
+.rvitem{break-inside:avoid;background:#f8f5ee;border:1px solid rgba(30,42,39,.09);border-radius:var(--radius);padding:20px 22px;margin:0 0 var(--gap)}
+.rvitem p{margin:10px 0 12px;font-size:17px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}
+.rvitem .by{font-size:14px;color:var(--slate)}
+.rvitem .by b{color:var(--ink);font-weight:600}
+.rvmorewrap{text-align:center;margin:6px 0 0}
+.btn-ghost-dark{border-color:rgba(30,42,39,.4);color:var(--ink);background:transparent}
+.btn-ghost-dark:hover{background:rgba(30,42,39,.07)}
+.rvform{position:relative;margin-top:44px;background:#f8f5ee;border:1px solid rgba(30,42,39,.09);border-radius:var(--radius);padding:30px 28px 26px;max-width:640px;margin-inline:auto;display:flex;flex-direction:column;gap:8px}
+.rvform h3{font-size:26px;margin:0 0 6px}
+.rvform label,.rvform legend{font-size:15px;color:var(--slate);margin-top:8px;padding:0}
+.rvform input[type=text],.rvform textarea{font:inherit;font-size:17px;padding:12px 14px;border:1px solid rgba(30,42,39,.22);border-radius:var(--radius);background:#fff;color:var(--ink);width:100%}
+.rvform textarea{resize:vertical;min-height:110px}
+.rvform input:focus-visible,.rvform textarea:focus-visible,.starrow input:focus-visible+label{outline:2px solid var(--slate);outline-offset:2px}
+.rvform fieldset{border:0;margin:0;padding:0}
+.starrow{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px;margin-top:6px}
+.starrow input{position:absolute;opacity:0;width:1px;height:1px}
+.starrow label{margin:0;cursor:pointer;line-height:0}
+.starrow svg{width:36px;height:36px;fill:none;stroke:#c8a14b;stroke-width:1.4;transition:transform .15s}
+.starrow label:hover svg{transform:scale(1.12)}
+.starrow input:checked ~ label svg,.starrow label:hover svg,.starrow label:hover ~ label svg{fill:#c8a14b}
+.rvform .btn{align-self:flex-start;margin-top:12px}
+.rvform .btn[disabled]{opacity:.6;cursor:default;transform:none}
+.rvmsg{margin:6px 0 0;font-size:15px;min-height:1.4em}
+.rvmsg.err{color:#9b3b2e}.rvmsg.ok{color:var(--slate)}
+.hp{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;border:0!important;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
+@media (max-width:700px){.rvlist{columns:1}.rvform{padding:24px 18px}.rvavg{font-size:38px}}
 </style>
 </head>
 <body>
@@ -255,6 +296,7 @@ footer p{margin:0}
   </div>
 </header>
 
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="star" viewBox="0 0 24 24"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.5l-5.9 3.1 1.2-6.5L2.5 10l6.6-.9z"/></symbol></svg>
 <main id="top">
 
 <!-- HERO -->
@@ -265,6 +307,7 @@ footer p{margin:0}
       <h1><span lang="he">דויד שפירא</span><span lang="en">David Shapira</span></h1>
       <p class="role"><span lang="he">מומחה בטיפול בכאבים · טיפול מקצועי עד הבית</span><span lang="en">Pain-relief specialist · Professional treatment at your door</span></p>
       <p class="lead"><span lang="he">כואב לך הגב? הצוואר תפוס? מגע מדויק, שחרור עמוק ורוגע שמרגישים גם יום אחרי – בהתאמה אישית, בנוחות הבית שלך.</span><span lang="en">Sore back? Tight neck? Precise touch, deep release and a calm you can still feel the next day — tailored to you, in the comfort of your own home.</span></p>
+      <a class="heroRating" id="heroRating" href="#reviews" hidden><span class="stars" id="heroStars"></span><span id="heroTxt"></span></a>
       <div class="cta">
         <a class="btn btn-primary wa-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.9L2 22l5.25-1.38A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.1.82.83-3.02-.2-.31a8.2 8.2 0 1 1 6.96 3.84Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.17.25-.64.8-.78.96-.14.17-.29.19-.53.06-.25-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.02-.38.1-.5.11-.11.25-.29.37-.43.12-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.17 0-.43.06-.65.31-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.17 1.73 2.64 4.2 3.7.59.26 1.05.41 1.4.52.59.19 1.13.16 1.55.1.47-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.17-.47-.29Z"/></svg> <span lang="he">שלחו הודעה בוואטסאפ</span><span lang="en">Message on WhatsApp</span></a>
         <a class="btn btn-ghost" href="tel:+972522225528"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> <span lang="he">התקשרו עכשיו</span><span lang="en">Call now</span></a>
@@ -421,6 +464,39 @@ footer p{margin:0}
       </div>
     </div>
 
+    <div class="rvbox" id="rvBox" hidden>
+      <h3 class="sub"><span lang="he">מה אומרים המטופלים</span><span lang="en">What clients say</span></h3>
+      <div class="rvsum">
+        <span class="rvavg" id="rvAvg">0.0</span>
+        <span class="stars big" id="rvStars"></span>
+        <span class="rvcount" id="rvCount"></span>
+      </div>
+      <p class="rvempty" id="rvEmpty"><span lang="he">עדיין אין ביקורות. היו הראשונים להשאיר ביקורת!</span><span lang="en">No reviews yet. Be the first to leave one!</span></p>
+      <div class="rvlist" id="rvList"></div>
+      <div class="rvmorewrap"><button class="btn btn-ghost-dark" id="rvMore" type="button" hidden><span lang="he">עוד ביקורות</span><span lang="en">More reviews</span></button></div>
+
+      <form class="rvform" id="rvForm" novalidate>
+        <h3><span lang="he">השאירו ביקורת</span><span lang="en">Leave a review</span></h3>
+        <fieldset class="starpick">
+          <legend><span lang="he">הדירוג שלכם</span><span lang="en">Your rating</span></legend>
+          <div class="starrow">
+            <input type="radio" name="rating" id="s5" value="5"><label for="s5" title="5"><svg><use href="#star"/></svg></label>
+            <input type="radio" name="rating" id="s4" value="4"><label for="s4" title="4"><svg><use href="#star"/></svg></label>
+            <input type="radio" name="rating" id="s3" value="3"><label for="s3" title="3"><svg><use href="#star"/></svg></label>
+            <input type="radio" name="rating" id="s2" value="2"><label for="s2" title="2"><svg><use href="#star"/></svg></label>
+            <input type="radio" name="rating" id="s1" value="1"><label for="s1" title="1"><svg><use href="#star"/></svg></label>
+          </div>
+        </fieldset>
+        <label for="rvName"><span lang="he">שם</span><span lang="en">Name</span></label>
+        <input id="rvName" name="name" type="text" maxlength="40" autocomplete="given-name" required>
+        <label for="rvText"><span lang="he">הביקורת שלכם</span><span lang="en">Your review</span></label>
+        <textarea id="rvText" name="text" rows="4" maxlength="500" required></textarea>
+        <input class="hp" type="text" name="website" id="rvWeb" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn-dark" id="rvSend" type="submit"><span lang="he">שליחה</span><span lang="en">Send</span></button>
+        <p class="rvmsg" id="rvMsg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+
     <h3 class="sub rv"><span lang="he">תעודות הוקרה והערכה</span><span lang="en">Certificates of appreciation</span></h3>
     <div class="certs rv" style="max-width:1100px">
       <button class="ph" style="--a:.842" data-full="assets/img/thanks.jpg" aria-label="certificate of appreciation"><img src="assets/img/thanks.jpg" alt="תעודת הוקרה מלוחמי פלס״ר סיירת גבעתי / Certificate of appreciation from Givati Reconnaissance Company fighters" loading="lazy" style="object-position:50% 40%"><span class="cap"><span lang="he">תעודת הוקרה – פלס״ר סיירת גבעתי</span><span lang="en">Certificate of appreciation – Givati Reconnaissance Co.</span></span></button>
@@ -467,6 +543,7 @@ footer p{margin:0}
     document.title=(l==='he')?'דויד שפירא – מעסה בכיר':'David Shapira – Senior Massage Therapist';
     try{localStorage.setItem('lang',l)}catch(e){}
     if(typeof ui==='function'&&typeof snd!=='undefined')ui();
+    if(typeof onLang==='function')onLang();
   }
   var saved=null; try{saved=localStorage.getItem('lang')}catch(e){}
   setLang(saved==='en'?'en':'he');
@@ -496,6 +573,62 @@ footer p{margin:0}
   function musicPause(){if(playing&&!paused){paused=true; fadeTo(0,300,function(){audio.pause()})}}
   function musicResume(){if(paused){paused=false; if(playing){audio.play().then(function(){fadeTo(TARGET,1500)}).catch(function(){})}}}
   ui(); start();
+
+  /* reviews */
+  var RV={list:[],count:0,sum:0,max:6};
+  function T(he,en){return root.lang==='he'?he:en}
+  function starsHtml(n){var s='',r=Math.round(n);for(var i=1;i<=5;i++)s+='<svg class="'+(i<=r?'':'off')+'" aria-hidden="true"><use href="#star"/></svg>';return s}
+  function fmtDate(ts){try{return new Date(ts).toLocaleDateString(root.lang==='he'?'he-IL':'en-GB',{month:'short',year:'numeric'})}catch(e){return ''}}
+  function countText(n){return root.lang==='he'?(n===1?'ביקורת אחת':n+' ביקורות'):(n===1?'1 review':n+' reviews')}
+  function renderReviews(){
+    var box=document.getElementById('rvBox'); if(!box||box.hidden)return;
+    var n=RV.count, avg=n?RV.sum/n:0;
+    document.getElementById('rvAvg').textContent=avg.toFixed(1);
+    document.getElementById('rvStars').innerHTML=starsHtml(avg);
+    document.getElementById('rvCount').textContent=countText(n);
+    document.querySelector('.rvsum').style.display=n?'':'none'; document.getElementById('rvEmpty').style.display=n?'none':'';
+    var list=document.getElementById('rvList'); list.textContent='';
+    RV.list.slice(0,RV.max).forEach(function(r){
+      var d=document.createElement('div'); d.className='rvitem';
+      var st=document.createElement('span'); st.className='stars'; st.innerHTML=starsHtml(r.rating);
+      var p=document.createElement('p'); p.textContent=r.text; p.dir='auto';
+      var by=document.createElement('div'); by.className='by';
+      var b=document.createElement('b'); b.textContent=r.name; by.appendChild(b); by.appendChild(document.createTextNode(' · '+fmtDate(r.ts)));
+      d.appendChild(st); d.appendChild(p); d.appendChild(by); list.appendChild(d);
+    });
+    document.getElementById('rvMore').hidden=RV.list.length<=RV.max;
+    var hr=document.getElementById('heroRating');
+    if(n){hr.hidden=false; document.getElementById('heroStars').innerHTML=starsHtml(avg); document.getElementById('heroTxt').textContent=avg.toFixed(1)+' · '+countText(n)} else hr.hidden=true;
+  }
+  function loadReviews(){
+    fetch('/api/reviews',{headers:{Accept:'application/json'}}).then(function(r){return r.ok?r.json():null}).then(function(d){
+      if(!d||!d.configured)return;
+      RV.list=d.reviews||[]; RV.count=d.count||0; RV.sum=(d.avg||0)*RV.count;
+      document.getElementById('rvBox').hidden=false; renderReviews();
+    }).catch(function(){});
+  }
+  function rvMsg(k,ok){var m=document.getElementById('rvMsg');m.className='rvmsg '+(ok?'ok':'err');m.textContent=k}
+  var ERR={rating:['בחרו דירוג בכוכבים','Please choose a star rating'],name:['נא להזין שם','Please enter your name'],text:['נא לכתוב ביקורת (לפחות 5 תווים)','Please write a review (at least 5 characters)'],links:['אי אפשר לצרף קישורים או כתובות','Links and addresses are not allowed'],limit:['שלחתם כמה ביקורות. נסו שוב מאוחר יותר','Too many reviews sent. Please try again later'],server:['משהו השתבש. נסו שוב','Something went wrong. Please try again']};
+  var form=document.getElementById('rvForm');
+  if(form)form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var rating=(form.querySelector('input[name=rating]:checked')||{}).value, name=form.name.value.trim(), text=form.text.value.trim();
+    if(!rating)return rvMsg(T(ERR.rating[0],ERR.rating[1]));
+    if(name.length<2)return rvMsg(T(ERR.name[0],ERR.name[1]));
+    if(text.length<5)return rvMsg(T(ERR.text[0],ERR.text[1]));
+    var btn=document.getElementById('rvSend'); btn.disabled=true; rvMsg('',true);
+    fetch('/api/reviews',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({rating:rating,name:name,text:text,website:document.getElementById('rvWeb').value})})
+    .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})})
+    .then(function(x){
+      btn.disabled=false;
+      if(!x.ok){var k=ERR[x.j&&x.j.error]||ERR.server; return rvMsg(T(k[0],k[1]))}
+      if(x.j.review){RV.list.unshift(x.j.review); RV.count++; RV.sum+=x.j.review.rating}
+      form.reset(); rvMsg(T('תודה רבה! הביקורת שלכם פורסמה.','Thank you! Your review is now live.'),true); renderReviews();
+    }).catch(function(){btn.disabled=false; rvMsg(T(ERR.server[0],ERR.server[1]))});
+  });
+  var more=document.getElementById('rvMore'); if(more)more.addEventListener('click',function(){RV.max+=12; renderReviews()});
+  function onLang(){renderReviews()}
+  loadReviews();
 
   /* lightbox */
   var dlg=document.getElementById('lb'), body=document.getElementById('lbBody');
