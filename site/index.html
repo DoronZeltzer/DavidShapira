@@ -270,9 +270,15 @@ footer p{margin:0}
 .rvmsg.err{color:#9b3b2e}.rvmsg.ok{color:var(--slate)}
 .hp{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;border:0!important;overflow:hidden;clip-path:inset(50%);opacity:0;pointer-events:none}
 @media (max-width:700px){.rvlist{columns:1}.rvform{padding:24px 18px}.rvavg{font-size:38px}}
+.skip{position:absolute;inset-inline-start:12px;top:-70px;background:var(--cream);color:var(--ink);padding:10px 16px;border-radius:var(--radius);z-index:200;text-decoration:none;font-weight:600}
+.skip:focus{top:12px}
+:focus-visible{outline:3px solid #1d5fd1;outline-offset:3px}
+.credit a,footer a{color:inherit}
+footer .alink{display:inline-block;margin-top:8px;font-size:14px;text-decoration:underline}
 </style>
 </head>
 <body>
+<a class="skip" href="#top"><span lang="he">דלג לתוכן הראשי</span><span lang="en">Skip to main content</span></a>
 
 <header>
   <div class="wrap bar">
@@ -523,6 +529,7 @@ footer p{margin:0}
 
 <footer><div class="wrap">
   <p>© 2026 <span lang="he">דויד שפירא – מעסה בכיר</span><span lang="en">David Shapira – Senior Massage Therapist</span></p>
+  <p><a class="alink" href="accessibility.html"><span lang="he">הצהרת נגישות</span><span lang="en">Accessibility statement</span></a></p>
   <p class="credit"><span lang="he">נוצר על ידי</span><span lang="en">Created by</span> <b>ZeltzerTech</b></p>
 </div></footer>
 
